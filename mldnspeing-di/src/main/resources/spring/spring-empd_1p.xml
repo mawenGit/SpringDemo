@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<bean id="deptobj"  class="cn.mldn.mldnspring.vo.Dept_1" p:deptno="10" p:dname="财务部" p:enable="on"/>
+	<bean id="hiredate" class="java.util.Date"/> <!-- 配置了系统类 -->
+	<!-- 在Spring 中负责进行Emp_0类对象的实例化处理，使用关系表表练习-->
+	<bean id="emps" class="cn.mldn.mldnspring.vo.Emp_1" p:empno="1058" p:ename="龙龙" p:salary="8655" p:hiredate-ref="hiredate" p:dept-ref="deptobj"/>
+		<!-- 进行应用配置处理 -->	
+</beans>
