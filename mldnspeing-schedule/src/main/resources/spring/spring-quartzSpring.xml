@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 如果想要进行任务的处理，则一定需要有一个任务的调度工厂类 -->
+	<!-- 定义了一个新的专门用于自定义任务调度方法的工厂任务类 -->
+	<bean id="methodTaskFactory" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">	<!-- 定义要执行程序类对象 -->
+			<bean class="cn.mldn.schedule.quartz.QuartzSpring.MyTask"/> <!-- -任务执行类 -->
+		</property>
+		<property name="targetMethod" value="runTask"/><!-- 设置执行任务的处理方法 -->
+	</bean>
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="methodTaskFactory"/> <!-- 定义每一次间隔触发是要执行的具体的任务详情 -->
+		<property name="cronExpression" value="* * * * * ?"/> <!-- 设置任务的触发时间 -->
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
