@@ -8,9 +8,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import junit.framework.TestCase;
-@ContextConfiguration(locations= {"classpath:spring/spring-springAnnotation.xml"})
+@ContextConfiguration(locations= {"classpath:spring/spring-springTask.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)	//设置要使用的测试工具
-public class MyTaskTest  extends TestCase{
+public class MyTaskTest extends TestCase{
 	@Test
 	public void testQuartZ() {
 		try {

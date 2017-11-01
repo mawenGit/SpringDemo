@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- 将定时任务的调度类配置在Spring容器里面 -->
-	<bean id="myTask" class="cn.mldn.schedule.quartz.springTask.MyTask"/>
+	<bean id="myTask" class="cn.mldn.schedule.quartz.springTask.MyTaskFirst"/>
 
 	<task:scheduled-tasks>	<!-- 进行SpringTask任务的调度配置 -->
 	<!-- 
